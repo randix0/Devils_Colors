@@ -1,0 +1,17 @@
+<?php
+$_configStyle = $this->getConfigStyle();
+$_superAttr = $this->getSuperAttribute()->getAttributeId();
+?>
+<div class="input-grid <?php echo $this->getGridClass() ?>" data-super="<?php echo $_superAttr ?>">
+	<input type="hidden" class="super-attribute-select" name="super_attribute[<?php echo $_superAttr ?>]" id="attribute<?php echo $_superAttr ?>" />
+<?php foreach($this->getOptions() as $option): ?>
+	<div class="option-box" id="option<?php echo $option->getOptionId() ?>" data-id="<?php echo $option->getOptionId() ?>" data-products="[<?php echo implode(',', $option->getProductIds()) ?>]">
+		<?php if($option->getIsColor() && $option->getBackground()): ?>
+		<a href="javascript:void(0);" title="<?php echo $option->getLabel() ?>" class="label" style="<?php echo $option->getBackground() ?>"></a>
+		<?php else: ?>
+		<a href="javascript:void(0);" title="<?php echo $option->getLabel() ?>" class="label"><?php echo $option->getLabel() ?></a>
+		<?php endif; ?>
+	</div>
+<?php endforeach; ?>
+</div>
+

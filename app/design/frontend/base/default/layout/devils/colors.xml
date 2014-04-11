@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<PRODUCT_TYPE_configurable>
+
+		<reference name="head">
+			<action method="addCss"><stylesheet>css/devils/colors/grid.css</stylesheet></action>
+            <action method="addItem"><type>skin_js</type><name>js/devils/colors/jquery-1.11.0.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/devils/colors/grid.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/devils/colors/jquery.hoverintent.min.js</name></action>
+		</reference>
+
+		<reference name="product.info.options.wrapper">
+            <block type="devils_colors/grid" name="product.info.options.configurable" as="options_configurable" before="-" template="devils/colors/catalog/product/view/type/options/configurable.phtml">
+            	<block type="core/template" name="devils_colors.login" template="devils/colors/catalog/product/view/type/options/configurable/login.phtml" />
+            </block>
+        </reference>
+
+	</PRODUCT_TYPE_configurable>
+
+	<review_product_list>
+		<update handle="PRODUCT_TYPE_configurable" />
+	</review_product_list>
+</layout>

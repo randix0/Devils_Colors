@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Devils_Colors>
+			<version>0.1.0</version>
+		</Devils_Colors>
+	</modules>
+
+	<frontend>
+		<routers>
+			<devils_colors>
+				<use>standard</use>
+				<args>
+					<module>Devils_Colors</module>
+					<frontName>devils_colors</frontName>
+				</args>
+			</devils_colors>
+		</routers>
+		<layout>
+			<updates>
+				<devils_colors>
+					<file>devils/colors.xml</file>
+				</devils_colors>
+			</updates>
+		</layout>
+        <!--
+		<translate>
+			<modules>
+				<Devils_Colors>
+					<files>
+						<default>Devils_Colors.csv</default>
+					</files>
+				</Devils_Colors>
+			</modules>
+		</translate>
+		-->
+	</frontend>
+	
+	<global>
+		<models>
+			<devils_colors>
+				<class>Devils_Colors_Model</class>
+				<resourceModel>devils_colors_resource</resourceModel>
+			</devils_colors>
+			<devils_colors_resource>
+				<class>Devils_Colors_Model_Resource</class>
+				<entities>
+					<attribute>
+						<table>devils_colors_attribute</table>
+					</attribute>
+					<color>
+						<table>devils_colors_color</table>
+					</color>
+				</entities>
+			</devils_colors_resource>
+			<catalog>
+				<rewrite>
+					<product>Devils_Colors_Model_Product</product>
+				</rewrite>
+			</catalog>
+		</models>
+		<resources>
+			<devils_colors_setup>
+				<setup>
+					<module>Devils_Colors</module>
+				</setup>
+			</devils_colors_setup>
+		</resources>
+		<blocks>
+			<devils_colors>
+				<class>Devils_Colors_Block</class>
+			</devils_colors>
+			<adminhtml>
+				<rewrite>
+					<catalog_product_attribute_edit_tab_options>Devils_Colors_Block_Adminhtml_Catalog_Product_Attribute_Edit_Tab_Options</catalog_product_attribute_edit_tab_options>
+				</rewrite>
+			</adminhtml>
+		</blocks>
+		<helpers>
+			<devils_colors>
+				<class>Devils_Colors_Helper</class>
+			</devils_colors>
+		</helpers>
+	</global>
+
+	<adminhtml>
+		<menu>
+			<devils>
+				<title>Devils</title>
+				<sort_order>1000</sort_order>
+				<children>
+					<devils_colors module="devils_colors" translate="title">
+						<title>Configurable Grid</title>
+						<sort_order>0</sort_order>
+						<action>devils_colors/adminhtml_color</action>
+						<children>
+							<manage module="devils_colors" translate="title">
+								<title>Manage Swatches</title>
+								<sort_order>10</sort_order>
+								<action>devils_colors/adminhtml_color</action>
+							</manage>
+							<import module="devils_colors" translate="title">
+								<title>Import Swatches</title>
+								<sort_order>20</sort_order>
+								<action>devils_colors/adminhtml_color/import</action>
+							</import>
+							<cfg module="devils_colors" translate="title">
+								<title>Configuration</title>
+								<sort_order>30</sort_order>
+								<action>adminhtml/system_config/edit/section/devils_colors/</action>
+							</cfg>
+						</children>
+					</devils_colors>
+				</children>
+			</devils>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<devils>
+							<title>Devils</title>
+							<children>
+								<devils_colors module="devils_colors" translate="title">
+									<title>Configurable Grid</title>
+									<sort_order>0</sort_order>
+									<children>
+										<manage module="devils_colors" translate="title">
+											<title>Manage Swatches</title>
+											<sort_order>10</sort_order>
+										</manage>
+										<import module="devils_colors" translate="title">
+											<title>Import Swatches</title>
+											<sort_order>20</sort_order>
+										</import>
+										<cfg module="devils_colors" translate="title">
+											<title>Configuration</title>
+											<sort_order>30</sort_order>
+										</cfg>
+									</children>
+								</devils_colors>
+							</children>
+						</devils>
+						<system>
+							<children>
+								<config>
+									<children>
+										<devils_colors translate="title">
+											<title>Config Grid</title>
+											<sort_order>100</sort_order>
+										</devils_colors>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+        <!---
+		<translate>
+			<modules>
+				<Devils_Colors>
+					<files>
+						<default>Devils_Colors.csv</default>
+					</files>
+				</Devils_Colors>
+			</modules>
+		</translate>
+		-->
+	</adminhtml>
+
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<Devils_Colors before="Mage_Adminhtml">Devils_Colors_Adminhtml</Devils_Colors>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+
+	<default>
+		<devils_colors>
+			<general>
+				<show_notice>1</show_notice>
+				<notice>20</notice>
+				<notice_msg>%q left!</notice_msg>
+				<translate>0</translate>
+				<halo>#006699</halo>
+				<display>1</display>
+			</general>
+		</devils_colors>
+	</default>
+</config>

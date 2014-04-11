@@ -1,0 +1,25 @@
+.input-grid { width: auto; position: relative; }
+.ajax-login { position: absolute; display: none; padding:10px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -khtml-border-radius: 4px; border-radius: 4px; background: #fff; -moz-box-shadow: 0 0 8px #ccc; -webkit-box-shadow: 0 0 8px #ccc; box-shadow: 0 0 8px #ccc; -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')"; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); z-index: 9999; }
+.ajax-login .close { position: relative; top: -205px; left: 50%; margin-left: -3px; text-align: right; cursor: pointer; }
+.ajax-login .form-list { display: none; }
+.ajax-login .form-list h2 { font: 14px/16px "Helvetica"; font-weight: bold; text-align: center; }
+.ajax-login .form-list .error { height: 16px; }
+.ajax-login .form-list .input-text { width: 295px; }
+.ajax-login .form-list label { width: auto; text-align: left; }
+.input-grid .option-box { display: inline-block; margin: 0 7px 7px 0; min-width:33px; vertical-align: top; cursor: pointer; padding: 0; }
+.input-grid .option-box:hover {}
+.input-grid .option-box a { display: block; font:14px/24px "Helvetica"; font-weight: bold; height: 24px; padding: 0px; text-decoration: none; color: #000; border:solid 2px #CCC; /*width:29px;*/ text-align:center; background:#FFF; }
+.input-grid .option-box .label { background-repeat: no-repeat; background-position: center; }
+.input-grid.color { width: 315px; }
+.input-grid .loading { background: url('../../../images/devils/colors/ajax-loader.gif') no-repeat; background-position: 50%; }
+.input-grid .option-box .qty-low { text-align:center; display: block; background: #F02B4F; color: #fff; font-weight: bold; font: 11px/15px "Helvetica"; height: 15px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -khtml-border-radius: 4px; border-radius: 4px; margin-top: 2px; }
+.input-grid .option-box .qty-low.hidden { height: 0; display: none; }
+.input-grid .option-box.selected { text-align: center;}
+.input-grid .option-box.selected  a{ border:solid 2px #064cc5; background:#FFF; color:#000;}
+.input-grid .bubble { position: absolute; z-index: 9998; max-width: 230px; background: #333333; border-color: #333333; color: #fff; font:12px/13px "Helvetica"; font-weight: bold; width: auto; padding: 12px 14px; margin-bottom: 6px; text-align: center; }
+.input-grid .bubble.sticky { z-index: 9997; }
+.input-grid .bubble:after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -6px; border-top: 6px solid; border-bottom: 0; border-top-color: inherit; border-left: 6px solid transparent; border-right: 6px solid transparent; }
+.product-options dd.last .input-grid .option-box a{ width: 130px; height:40px; border:solid 1px #cccccc; font-size:12px; color:#666666; font-weight:bold; font-family:Verdana, Geneva, sans-serif; background:#f8f8f8}
+.product-options dd.last .input-grid .disabled a{ background:#eee; border:solid 1px #ddd; color:#bbb;}
+.product-options dd.last .input-grid .selected a{ border:solid 1px #064CC5; }
+.product-options dt label { cursor: default !important; }

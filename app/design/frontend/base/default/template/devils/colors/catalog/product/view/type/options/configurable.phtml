@@ -1,0 +1,60 @@
+<?php
+$_product = $this->getProduct();
+$_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
+?>
+
+<?php if($_product->isSaleable() && count($_attributes)): ?>
+
+<style>
+.input-grid .option-box.selected {
+  <?php /*?>  -moz-box-shadow: 0 0 8px <?php echo $this->getHaloColor() ?>;
+    -webkit-box-shadow: 0 0 8px <?php echo $this->getHaloColor() ?>;
+    box-shadow: 0 0 8px <?php echo $this->getHaloColor() ?>;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=0, Color='<?php echo $this->getHaloColor() ?>')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=0, Color='<?php echo $this->getHaloColor() ?>');<?php */?>
+}
+</style>
+
+<dl>
+<?php foreach($_attributes as $_attribute): ?>
+    <dt><label class="required"><em>*</em><?php echo $_attribute->getLabel() ?></label></dt>
+    <dd<?php if($_attribute->decoratedIsLast): ?> class="last"<?php endif; ?>>
+        <?php echo $this->getOptionsHtml($_attribute, $_product); ?>
+    </dd>
+<?php endforeach; ?>
+</dl>
+
+<script type="text/javascript">
+
+ConfigGrid.init(<?php echo $this->getJsonConfig() ?>, <?php echo $this->getOptionJsonConfig($_product, $_attributes) ?>);
+
+var spConfig = new Product.Config(<?php echo $this->getJsonConfig() ?>);
+
+ConfigGrid.onImageChange(function(largeImageUrl, smallImageUrl){
+    jQuery('#main-image').data('jqzoom', null);
+    jQuery('#main-image').find('img').first().attr('src', smallImageUrl);
+    jQuery('#main-image').find('img').first().closest('a').attr('href', largeImageUrl);
+    
+    var options = {
+        zoomType: 'standard',
+        zoomWidth: 374,
+        zoomHeight: 327,
+        xOffset: 15,
+        yOffset: 0,
+        imageOpacity: 0.6,
+        title : false
+    };
+
+    jQuery('#main-image').jqzoom(options);
+    
+});
+
+ConfigGrid.onPriceChange(function(price){
+    jQuery('.price-box span.price').html(price);
+});
+
+</script>
+
+<?php echo $this->getChildHtml('configgrid.login') ?>
+
+<?php endif; ?>
