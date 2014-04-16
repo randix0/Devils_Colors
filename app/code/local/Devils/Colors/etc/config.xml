@@ -90,7 +90,7 @@
 				<sort_order>1000</sort_order>
 				<children>
 					<devils_colors module="devils_colors" translate="title">
-						<title>Configurable Grid</title>
+						<title>Colors Grid</title>
 						<sort_order>0</sort_order>
 						<action>devils_colors/adminhtml_color</action>
 						<children>
