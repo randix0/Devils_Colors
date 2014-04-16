@@ -26,11 +26,11 @@ $_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
 
 <script type="text/javascript">
 
-ConfigGrid.init(<?php echo $this->getJsonConfig() ?>, <?php echo $this->getOptionJsonConfig($_product, $_attributes) ?>);
+DevilsColors.init(<?php echo $this->getJsonConfig() ?>, <?php echo $this->getOptionJsonConfig($_product, $_attributes) ?>);
 
 var spConfig = new Product.Config(<?php echo $this->getJsonConfig() ?>);
 
-ConfigGrid.onImageChange(function(largeImageUrl, smallImageUrl){
+DevilsColors.onImageChange(function(largeImageUrl, smallImageUrl){
     jQuery('#main-image').data('jqzoom', null);
     jQuery('#main-image').find('img').first().attr('src', smallImageUrl);
     jQuery('#main-image').find('img').first().closest('a').attr('href', largeImageUrl);
@@ -49,12 +49,12 @@ ConfigGrid.onImageChange(function(largeImageUrl, smallImageUrl){
     
 });
 
-ConfigGrid.onPriceChange(function(price){
+DevilsColors.onPriceChange(function(price){
     jQuery('.price-box span.price').html(price);
 });
 
 </script>
 
-<?php echo $this->getChildHtml('configgrid.login') ?>
+<?php echo $this->getChildHtml('devils_colors.login') ?>
 
 <?php endif; ?>
