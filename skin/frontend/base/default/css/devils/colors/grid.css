@@ -6,11 +6,11 @@
 .ajax-login .form-list .error { height: 16px; }
 .ajax-login .form-list .input-text { width: 295px; }
 .ajax-login .form-list label { width: auto; text-align: left; }
-.input-grid .option-box { display: inline-block; margin: 0 7px 7px 0; min-width:33px; vertical-align: top; cursor: pointer; padding: 0; }
+.input-grid .option-box { display: block; float: left; margin: 0 7px 7px 0; min-width:33px; vertical-align: top; padding: 0; }
 .input-grid .option-box:hover {}
-.input-grid .option-box a { display: block; font:14px/24px "Helvetica"; font-weight: bold; height: 24px; padding: 0px; text-decoration: none; color: #000; border:solid 2px #CCC; /*width:29px;*/ text-align:center; background:#FFF; }
+.input-grid .option-box a { display: block; font:14px/24px "Helvetica"; font-weight: bold; width: 130px; height:40px; padding: 0px; text-decoration: none; color: #000; border:solid 2px #CCC; /*width:29px;*/ text-align:center; background:#FFF; }
 .input-grid .option-box .label { background-repeat: no-repeat; background-position: center; }
-.input-grid.color { width: 315px; }
+.input-grid.color { width: auto; overflow: hidden;}
 .input-grid .loading { background: url('../../../images/devils/colors/ajax-loader.gif') no-repeat; background-position: 50%; }
 .input-grid .option-box .qty-low { text-align:center; display: block; background: #F02B4F; color: #fff; font-weight: bold; font: 11px/15px "Helvetica"; height: 15px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -khtml-border-radius: 4px; border-radius: 4px; margin-top: 2px; }
 .input-grid .option-box .qty-low.hidden { height: 0; display: none; }
