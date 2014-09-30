@@ -21,8 +21,8 @@
         </reference>
 
         <!-- product.info.options.wrapper -->
-        <reference name="product.info.options">
-            <remove name="product.info.options.wrapper"/>
+        <reference name="product.info.options.wrapper">
+            <remove name="product.info.options.configurable"/>
         </reference>
         <!--
         <reference name="right">
@@ -31,12 +31,9 @@
             </action>
         </reference>
         -->
-        <reference name="right">
+        <reference name="product.info.options.wrapper">
             <block type="devils_colors/grid" name="devils.colors" as="devils_colors"
-                   before="-" template="devils/colors/catalog/product/view/type/options/configurable.phtml">
-                <block type="core/template" name="devils_colors.login"
-                       template="devils/colors/catalog/product/view/type/options/configurable/login.phtml"/>
-            </block>
+                   before="-" template="devils/colors/catalog/product/view/type/options/configurable.phtml"/>
         </reference>
 
     </PRODUCT_TYPE_configurable>
